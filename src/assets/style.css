@@ -1,13 +1,21 @@
+:root{
+    --primary-clr:rgb(57, 57, 206)
+}
+
 *{
     margin: 0;
     padding: 0;
 }
 
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
 .navbar{
     height: 55px;
-    background-color: rgb(57, 57, 206);
+    background-color: var(--primary-clr) ;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .navbar a {
@@ -15,9 +23,48 @@
     text-decoration: none;
 }
 
+.logo{
+    font-size:1.1em;
+    font-weight: bold;
+}
+
+.nav-links a{
+    font-size: .9em;
+    opacity: .9;
+    text-transform: uppercase;
+    margin-left: .75em;
+}
+
+.nav-links a:hover{
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.nav-links .btn{
+    background-color: #fff;
+    color: var(--primary-clr);
+    margin-left: .7em;
+}
+
+.btn{
+    border: none;
+    outline: none;
+    padding: .5em .7em;
+    border-radius:2px;
+    background-color: var(--primary-clr);
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
+.btn i{
+    margin-right: .5em;
+}
+
 .container{
     padding: 0 10vw;
 }
+
 @media screen and(max-width: 1000px) {
     .container{
         padding: 0 6vw;
@@ -26,6 +73,6 @@
 
 @media screen and(max-width: 650px) {
     .container{
-        padding: 0 3vw;
+        padding: 0 2vw;
     }
 }
