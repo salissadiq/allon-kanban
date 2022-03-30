@@ -2,9 +2,9 @@
     <div class="navbar container">
         <a href="" class="logo">Allon KanBan</a>
     <div class="nav-links">
-        <a href="">home</a>
-        <a href="">fact</a>
-        <a href="">about</a>
+        <router-link to="/">home</router-link>
+        <router-link to="/facts">facts</router-link>
+        <router-link to="/about">about</router-link>
         <button class="btn">
           <i class="fas fa-plus"></i>  add board
         </button>
