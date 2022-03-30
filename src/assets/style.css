@@ -35,7 +35,7 @@ body{
     margin-left: .75em;
 }
 
-.nav-links a:hover{
+.nav-links a:hover, .nav-links a.active{
     opacity: 1;
     text-decoration: underline;
 }
@@ -54,6 +54,7 @@ body{
     background-color: var(--primary-clr);
     text-transform: uppercase;
     font-weight: bold;
+    color: #fff;
 
 }
 
@@ -61,8 +62,47 @@ body{
     margin-right: .5em;
 }
 
+.msg{
+    color: rgb(151, 121, 121);
+    text-align: center;
+}
+
 .container{
     padding: 0 10vw;
+}
+
+.main{
+    margin: 1.5em 0;
+}
+
+.boards-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5em;
+}
+
+.board{
+    padding: 1em;
+    box-shadow: 0 3px 6px rgb(0, 0, 0, .15);
+    border-top: 3px solid red;
+    border-radius: 4px;
+}
+
+.board .head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5em;
+}
+
+.head .title{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.fa-trash{
+    margin-left: .74em;
+    color: rgb(223, 16, 16);
+    cursor: pointer;
 }
 
 @media screen and(max-width: 1000px) {
