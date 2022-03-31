@@ -18,31 +18,14 @@ import Board from '@/components/Board'
                 boards:[
                     {
                         title: "Testboard", 
-                        color:'red', 
-                        items: [
-                            {title: 'Item1'},
-                            {title: 'Item2'},
-                            {title: 'Item3'}
-                        ]
-                    },
-                     {
-                        title: "Testboard", 
                         color:'green', 
                         items: [
-                            // {title: 'Item1'},
-                            // {title: 'Item2'},
-                            // {title: 'Item3'}
+                            {title: 'Item1', priority: 'high'},
+                            {title: 'Item2', priority: 'medium'},
+                            {title: 'Item3', priority: 'low'},
                         ]
                     },
-                     {
-                        title: "Testboard", 
-                        color:'blue', 
-                        items: [
-                            {title: 'Item1'},
-                            {title: 'Item2'},
-                            {title: 'Item3'}
-                        ]
-                    }
+
                 ]
             }
         }

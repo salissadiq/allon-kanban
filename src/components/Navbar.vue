@@ -3,20 +3,22 @@
         <a href="" class="logo">Allon KanBan</a>
     <div class="nav-links">
         <router-link v-for="(link, index) in links" :key="index" :class="{active: link.path == $route.path }" :to="link.path">{{link.name}}</router-link>
-        <button class="btn">
-          <i class="fas fa-plus"></i>  add board
-        </button>
+        <AddBoardBtn />
     </div>
     </div>
 </template>
 
 <script>
+import AddBoardBtn from '@/components/AddBoardBtn'
 export default {
+    components:{
+        AddBoardBtn
+    },
     data:()=> {
         return {
             links: [
                 {name: 'home', path: '/'},
-                {name: 'facts', path: '/facts'},
+                {name: 'facts', path: '/facts/45'},
                 {name: 'about', path: '/about'}
             ]
         }

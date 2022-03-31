@@ -62,6 +62,21 @@ body{
     margin-right: .5em;
 }
 
+.btn.submit{
+    background-color: var(--primary-clr);
+    color: #fff;
+    padding: .75em 1em;
+}
+
+.btn.cancel{
+    background-color: rgb(6, 185, 6);
+    color: #fff;
+    padding: .75em 1em;
+}
+label{
+    margin-bottom: .3em;
+}
+
 .msg{
     color: rgb(151, 121, 121);
     text-align: center;
@@ -86,6 +101,46 @@ body{
     box-shadow: 0 3px 6px rgb(0, 0, 0, .15);
     border-top: 3px solid red;
     border-radius: 4px;
+    margin-bottom: 1em;
+}
+
+.items{
+    padding: 1em;
+    box-shadow: 0 3px 6px rgb(0, 0, 0, .15);
+    border-radius: 4px;
+}
+.items .head .priority{
+    font-weight: bold;
+    color: rgb(48, 47, 47);
+
+}
+
+.item .title{
+    margin: 1em 0;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: rgb(48, 47, 47);
+}
+
+.text-right{
+    text-align: right;
+}
+
+.btn.delete{
+    color: rgb(223, 16, 16);
+    background-color: rgb(255, 202, 202);
+}
+
+.badge{
+    padding: .3em .75em;
+    background-color: red;
+    margin-left: 1em;
+    border-radius: 3px;
+    color: #fff;
+    box-shadow: 0 2px 3px rgb(0, 0, 0, .15);
+    font-size: .8em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .board .head{
@@ -93,6 +148,51 @@ body{
     justify-content: space-between;
     align-items: center;
     margin-bottom: .5em;
+}
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0, .5);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    backdrop-filter: blur(5px);
+}
+
+.modal .content{
+    padding: 1em;
+    background-color: #fff;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 5px;
+}
+
+.content .title{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.form{
+    margin: 1em 0;
+}
+
+.form label, .form input{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form input{
+    padding: .5em;
+    border-radius: 3px;
+    margin-bottom: .75em;
+}
+
+input[type="color"]{
+    padding: .1em .5em;
 }
 
 .head .title{

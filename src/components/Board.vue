@@ -12,21 +12,23 @@
                 <div>
                     <h2 class="msg" v-if="board.items.length == 0">No items Yet!!!</h2>
                     <div v-else>
-                        <p v-for="(item, index) in board.items" :key="index">
-                            {{item.title}}
-                        </p>
+                        <Item v-for="(item, index) in board.items" :key="index" :item="item" :clr="board.color"/>
                     </div>
                 </div>
             </div>
 </template>
 
 <script>
+import Item from '@/components/Item'
     export default {
         props: {
             board:{
                 required: true,
                 type: Object
             }
+        },
+        components:{
+            Item
         }
     }
 </script>
