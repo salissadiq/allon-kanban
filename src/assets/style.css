@@ -122,6 +122,10 @@ label{
     color: rgb(48, 47, 47);
 }
 
+.list-move{
+    transition: .4s;
+}
+
 .text-right{
     text-align: right;
 }

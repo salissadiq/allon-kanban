@@ -17,22 +17,21 @@ import EventBus from '@/utils/EventBus'
         },
         data: ()=>{
             return {
-                boards:[
-                    {
-                        title: "Testboard", 
-                        color:'green', 
-                        items: [
-                            {title: 'Item1', priority: 'high'},
-                            {title: 'Item2', priority: 'medium'},
-                            {title: 'Item3', priority: 'low'},
-                        ]
-                    },
+                boards:[]
+            }
+        },
 
-                ]
+        watch:{
+            boards(){
+                localStorage.setItem('boards', JSON.stringify(this.boards))
             }
         },
 
         mounted(){
+             const temp = localStorage.getItem('boards')
+            if(temp){
+                this.boards = JSON.parse(temp) || this.boards
+            }
             EventBus.$on('addBoard', (data)=>{
                 this.boards.push({
                     title: data.inputA,

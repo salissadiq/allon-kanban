@@ -5,7 +5,7 @@
                <span>Priority:</span>
            <span class="badge" :style="{backgroundColor: priorityClr}">{{item.priority}}</span>
           </span>
-          <i class="fas fa-sort" :style="{color: clr}"></i>
+          <i class="fas fa-sort handle" :style="{color: clr, cursor:'pointer'}"></i>
        </div>
           <p class="title">{{item.title}}</p>
           <p class="text-right">

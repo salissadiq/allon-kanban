@@ -13,13 +13,18 @@
                 <div>
                     <h2 class="msg" v-if="board.items.length == 0">No items Yet!!!</h2>
                     <div v-else>
-                        <Item v-for="(item, index) in board.items" :key="index" :item="item" :clr="board.color" :itemIndex="index" :boardIndex="id" />
+                        <draggable v-model="board.items" group="items" handle=".handle">
+                        <transition-group name="list">
+                        <Item v-for="(item, index) in board.items" :key="item.title" :item="item" :clr="board.color" :itemIndex="index" :boardIndex="id" />
+                        </transition-group>
+                        </draggable>
                     </div>
                 </div>
             </div>
 </template>
 
 <script>
+import draggable from 'vuedraggable'
 import Item from '@/components/Item'
 import AddItemBtn from '@/components/AddItemBtn'
 import EventBus from '@/utils/EventBus'
@@ -36,7 +41,8 @@ import EventBus from '@/utils/EventBus'
         },
         components:{
             Item, 
-            AddItemBtn
+            AddItemBtn,
+            draggable
         },
         methods:{
             handleDeleteBoard(){
