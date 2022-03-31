@@ -129,7 +129,9 @@ label{
 .text-right{
     text-align: right;
 }
-
+.text-center{
+    text-align: center;
+}
 .btn.delete{
     color: rgb(223, 16, 16);
     background-color: rgb(255, 202, 202);

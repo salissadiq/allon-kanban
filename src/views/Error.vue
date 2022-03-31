@@ -1,6 +1,8 @@
 <template>
     <div>
-        <p>404 Page Not found</p>
+        <img src="../assets/error.svg" alt="">
+        <p class="text-center"><router-link to="/">Go to Home</router-link></p>
+
     </div>
 </template>
 
