@@ -6,6 +6,11 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path:'*',
+    name: 'Error',
+    component: () => import('@/views/Error')
+  },
+  {
     path: '/',
     name: 'Home',
     component: Home
