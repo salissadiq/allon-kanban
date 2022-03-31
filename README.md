@@ -1,3 +1,5 @@
+![](./screencapture.png)
+
 # allo
 
 ## Project setup
