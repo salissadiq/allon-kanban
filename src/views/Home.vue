@@ -45,6 +45,7 @@ import EventBus from '@/utils/EventBus'
                     title: data.inputA,
                     priority: data.inputB || 'low'
                 })
+                localStorage.setItem('boards', JSON.stringify(this.boards))
             })
 
             EventBus.$on('deleteBoard', (data)=>{
@@ -52,6 +53,11 @@ import EventBus from '@/utils/EventBus'
             })
             EventBus.$on('deleteItem', (data)=>{
                 this.boards[data.boardIndex].items.splice(data.itemIndex, 1)
+                localStorage.setItem('boards', JSON.stringify(this.boards))
+            })
+
+            EventBus.$on('sortItem', (data) =>{
+                localStorage.setItem('boards', JSON.stringify(this.boards))
             })
         }
 

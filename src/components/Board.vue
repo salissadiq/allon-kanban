@@ -13,7 +13,7 @@
                 <div>
                     <h2 class="msg" v-if="board.items.length == 0">No items Yet!!!</h2>
                     <div v-else>
-                        <draggable v-model="board.items" group="items" handle=".handle">
+                        <draggable v-model="board.items" group="items" handle=".handle" @sort="handleSort">
                         <transition-group name="list">
                         <Item v-for="(item, index) in board.items" :key="item.title" :item="item" :clr="board.color" :itemIndex="index" :boardIndex="id" />
                         </transition-group>
@@ -47,6 +47,9 @@ import EventBus from '@/utils/EventBus'
         methods:{
             handleDeleteBoard(){
                 EventBus.$emit('deleteBoard', {boardIndex:this.id})
+            },
+            handleSort(){
+                EventBus.$emit('sortItem', this.id)
             }
         }
     }
