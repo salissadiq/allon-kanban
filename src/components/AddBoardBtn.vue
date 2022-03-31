@@ -10,6 +10,7 @@
             labelB="Board Color"
             inputBType="color"
             @close="showModal = false"
+            @submit="handleSubmit"
         
         />
     </span>
@@ -17,6 +18,7 @@
 
 <script>
     import Modal from '@/components/Modal'
+    import EventBus from '@/utils/EventBus'
     export default {
         components:{
             Modal
@@ -24,6 +26,13 @@
         data: ()=> {
             return {
                 showModal : false,
+            }
+        },
+        
+        methods: {
+            handleSubmit(data){
+                EventBus.$emit('addBoard', data)
+                this.showModal = false
             }
         }
     }

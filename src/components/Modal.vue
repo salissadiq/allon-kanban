@@ -6,15 +6,15 @@
             </p>
             <div class="form">
                 <label>{{labelA}}</label>
-                <input type="text">
+                <input type="text" v-model="inputA">
                 <label>{{labelB}}</label>
-                <input :type="inputBType">
+                <input :type="inputBType" v-model="inputB">
             </div>
             <p class="text-right">
                 <button class="btn cancel" @click="handleCloseModal">
                     cancel
                 </button>
-                 <button class="btn submit">
+                 <button class="btn submit" @click="submit">
                     submit
                 </button>
             </p>
@@ -25,9 +25,19 @@
 <script>
     export default {
         props: ['title', 'labelA', 'labelB', 'inputBType'],
+        data:()=>({
+            inputA: '',
+            inputB: ''
+        }),
         methods:{
             handleCloseModal(){
                 this.$emit('close')
+            },
+            submit(){
+                this.$emit('submit', {
+                    inputA: this.inputA,
+                    inputB: this.inputB
+                })
             }
         }
         

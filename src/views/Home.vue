@@ -9,6 +9,7 @@
 
 <script>
 import Board from '@/components/Board'
+import EventBus from '@/utils/EventBus'
     export default {
         components:{
             Board
@@ -28,7 +29,18 @@ import Board from '@/components/Board'
 
                 ]
             }
+        },
+
+        mounted(){
+            EventBus.$on('addBoard', (data)=>{
+                this.boards.push({
+                    title: data.inputA,
+                    color: data.inputB || '#000',
+                    items:[]
+                })
+            })
         }
+
         
     }
 </script>
