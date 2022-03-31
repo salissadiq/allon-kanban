@@ -179,7 +179,7 @@ label{
     margin: 1em 0;
 }
 
-.form label, .form input{
+.form label, .form input, .form select{
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -194,6 +194,16 @@ label{
 input[type="color"]{
     padding: .1em .5em;
 }
+select {
+    padding: .1em .5em;
+}
+
+.form select{
+    padding: .5em;
+    border-radius: 3px;
+    margin-bottom: .75em;
+}
+
 
 .head .title{
     font-size: 1.1em;

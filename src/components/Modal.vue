@@ -8,7 +8,12 @@
                 <label>{{labelA}}</label>
                 <input type="text" v-model="inputA">
                 <label>{{labelB}}</label>
-                <input :type="inputBType" v-model="inputB">
+                <input v-if="inputBType != 'select' " :type="inputBType" v-model="inputB">
+                <select v-else v-model="inputB">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
             </div>
             <p class="text-right">
                 <button class="btn cancel" @click="handleCloseModal">
@@ -39,6 +44,9 @@
                     inputB: this.inputB
                 })
             }
+        },
+        mounted(){
+            console.log(this.inputBType);
         }
         
     }
